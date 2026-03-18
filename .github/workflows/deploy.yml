@@ -41,7 +41,7 @@ jobs:
           # 從 GitHub Variables (或預設值) 注入參數設定
           VITE_PASS_THRESHOLD: ${{ vars.VITE_PASS_THRESHOLD || '60' }}
           VITE_QUESTION_COUNT: ${{ vars.VITE_QUESTION_COUNT || '10' }}
-        run: npm run build
+        run: CI=false npx vite build
 
       - name: Upload Build Artifacts
         uses: actions/upload-pages-artifact@v3
